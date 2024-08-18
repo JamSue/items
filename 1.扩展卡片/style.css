@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    margin: 10px;
+}
+.container{
+    display: flex;
+    width: 90vw;
+}
+.panel{
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    margin: 10px;
+    color:rgb(240, 240, 153);
+    cursor: crosshair;
+    border-radius: 50px;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: all 1s ease-in;
+}
+
+.panel h3{
+    font-size: medium;
+    font-family: Cambria;
+    font-style: italic;
+    position: absolute;
+    
+    left: 20px;
+    opacity: 0;
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4;
+}
