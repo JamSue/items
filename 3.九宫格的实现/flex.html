@@ -1,0 +1,43 @@
+<!-- 
+ 实现一个九宫格，每个格子宽100 高100 间距10 相对页面居中 
+ 1. table
+ 2. flex
+ 3. grid 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>九宫格</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+      .panel {
+        height: 100px;
+        width: 100px;
+        margin: 10px;
+        border: solid black 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel"></div>
+      <div class="panel"></div>
+      <div class="panel"></div>
+    </div>
+    <div class="container">
+      <div class="panel"></div>
+      <div class="panel"></div>
+      <div class="panel"></div>
+    </div>
+    <div class="container">
+      <div class="panel"></div>
+      <div class="panel"></div>
+      <div class="panel"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!-- 
+ 实现一个九宫格，每个格子宽100 高100 间距10 相对页面居中 
+ 1. table
+ 2. flex
+ 3. grid 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        row-gap: 10px;
+        column-gap: 10px;
+      }
+      .grid {
+        border: solid black 1px;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="grid"></div>
+      <div class="grid"></div>
+      <div class="grid"></div>
+      <div class="grid"></div>
+      <div class="grid"></div>
+      <div class="grid"></div>
+      <div class="grid"></div>
+      <div class="grid"></div>
+      <div class="grid"></div>
+    </div>
+  </body>
+</html>
