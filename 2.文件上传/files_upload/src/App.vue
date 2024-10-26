@@ -6,7 +6,9 @@
 
 <script>
 
+
 import fileUpload from './components/fileUpload.vue';
+
 export default {
   name: 'App',
   components: {

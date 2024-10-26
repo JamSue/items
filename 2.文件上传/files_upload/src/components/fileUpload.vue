@@ -43,7 +43,7 @@ export default {
     methods: {
         handleFileChange(event) {
             this.file = event.target.files[0]
-            console.log('查看文件信息', this.file);
+            this.setChunkSize(this.file.size)
             
         },
         setChunkSize(fileSize) {
@@ -54,15 +54,23 @@ export default {
             }
         },
         async uploadFile() {
+            const _file = this.file
             if (!this.file) {
                 alert('请先选择一个文件')
                 return
             }
+            const totalChunkNum = Math.ceil(_file.size / this.chunkSize) // 总分片数量
+            const chunkPromises = [] // 每个分片上传的promise
+
+            for (let chunkIndex = 0; chunkIndex < totalChunkNum; chunkIndex++){
+                const start = chunkIndex * this.chunkSize;
+                const end = Math.min(chunkIndex * this.chunkSize, _file.size)
+                const fileChunk = _file.slice(start, end); // file对象本身就是一个Blob,返回一个新的Blob对象
+            }
             const formData = new FormData(); // 内部数据是键值对，通常将formData类型的数据提交给服务器
-            const fileName = encodeURIComponent(this.file.name); // 编码文件名
-            formData.append('file', this.file, fileName); 
-            // formData.append('file', this.file)
-            // console.log('this.file', this.file);
+            const fileName = encodeURIComponent(_file.name); // 编码文件名
+            formData.append('file', _file, fileName); 
+           
             console.log('formData', formData);
             for (let pairs of formData.entries()) {
                 console.log('pairs', pairs);
